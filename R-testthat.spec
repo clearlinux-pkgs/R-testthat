@@ -4,23 +4,13 @@
 #
 Name     : R-testthat
 Version  : 1.0.2
-Release  : 16
+Release  : 17
 URL      : http://cran.r-project.org/src/contrib/testthat_1.0.2.tar.gz
 Source0  : http://cran.r-project.org/src/contrib/testthat_1.0.2.tar.gz
 Summary  : Unit Testing for R
 Group    : Development/Tools
 License  : MIT
 Requires: R-testthat-lib
-Requires: R-R6
-Requires: R-digest
-Requires: R-magrittr
-Requires: R-praise
-Requires: R-crayon
-BuildRequires : R-R6
-BuildRequires : R-crayon
-BuildRequires : R-digest
-BuildRequires : R-magrittr
-BuildRequires : R-praise
 BuildRequires : clr-R-helpers
 
 %description
@@ -57,6 +47,7 @@ mkdir -p %{buildroot}/usr/lib64/R/library
 R CMD INSTALL --install-tests --build  -l %{buildroot}/usr/lib64/R/library testthat
 %{__rm} -rf %{buildroot}%{_datadir}/R/library/R.css
 %check
+export LANG=C
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost
