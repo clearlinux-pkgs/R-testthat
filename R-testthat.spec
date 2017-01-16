@@ -4,21 +4,13 @@
 #
 Name     : R-testthat
 Version  : 1.0.2
-Release  : 21
+Release  : 22
 URL      : http://cran.r-project.org/src/contrib/testthat_1.0.2.tar.gz
 Source0  : http://cran.r-project.org/src/contrib/testthat_1.0.2.tar.gz
 Summary  : Unit Testing for R
 Group    : Development/Tools
 License  : MIT
 Requires: R-testthat-lib
-Requires: R-R6
-Requires: R-digest
-Requires: R-magrittr
-Requires: R-praise
-BuildRequires : R-R6
-BuildRequires : R-digest
-BuildRequires : R-magrittr
-BuildRequires : R-praise
 BuildRequires : clr-R-helpers
 
 %description
@@ -40,9 +32,12 @@ lib components for the R-testthat package.
 %setup -q -c -n testthat
 
 %build
+export LANG=C
+export SOURCE_DATE_EPOCH=1484550164
 
 %install
 rm -rf %{buildroot}
+export SOURCE_DATE_EPOCH=1484550164
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -52,7 +47,7 @@ export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export LDFLAGS="$LDFLAGS  -Wl,-z -Wl,relro"
 mkdir -p %{buildroot}/usr/lib64/R/library
-R CMD INSTALL --install-tests --build  -l %{buildroot}/usr/lib64/R/library testthat
+R CMD INSTALL --install-tests --built-timestamp=${SOURCE_DATE_EPOCH} --build  -l %{buildroot}/usr/lib64/R/library testthat
 %{__rm} -rf %{buildroot}%{_datadir}/R/library/R.css
 %check
 export LANG=C
