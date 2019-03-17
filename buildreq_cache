@@ -3,5 +3,6 @@ R-assertthat
 R-cli
 R-evaluate
 R-markdown
+R-rlang
 R-stringi
 R-withr
