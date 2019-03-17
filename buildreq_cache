@@ -1,3 +1,7 @@
 2.0.1
+R-assertthat
+R-cli
 R-evaluate
+R-markdown
 R-stringi
+R-withr
