@@ -1,8 +1,10 @@
-2.0.1
+2.1.1
 R-assertthat
 R-cli
+R-curl
 R-evaluate
 R-markdown
 R-rlang
 R-stringi
+R-vctrs
 R-withr
