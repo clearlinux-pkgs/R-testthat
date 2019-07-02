@@ -4,22 +4,38 @@
 #
 Name     : R-testthat
 Version  : 2.1.1
-Release  : 62
+Release  : 63
 URL      : https://cran.r-project.org/src/contrib/testthat_2.1.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/testthat_2.1.1.tar.gz
 Summary  : Unit Testing for R
 Group    : Development/Tools
 License  : MIT
 Requires: R-testthat-lib = %{version}-%{release}
-Requires: R-curl
-Requires: R-vctrs
-BuildRequires : R-curl
-BuildRequires : R-vctrs
+Requires: R-R6
+Requires: R-cli
+Requires: R-crayon
+Requires: R-digest
+Requires: R-evaluate
+Requires: R-magrittr
+Requires: R-markdown
+Requires: R-praise
+Requires: R-rlang
+Requires: R-withr
+BuildRequires : R-R6
+BuildRequires : R-cli
+BuildRequires : R-crayon
+BuildRequires : R-digest
+BuildRequires : R-evaluate
+BuildRequires : R-magrittr
+BuildRequires : R-markdown
+BuildRequires : R-praise
+BuildRequires : R-rlang
+BuildRequires : R-withr
 BuildRequires : buildreq-R
 
 %description
-# testthat <img src="man/figures/logo.png" align="right" />
-<!-- badges: start -->
+frustrating and boring, many of us avoid it. 'testthat' is a testing framework 
+    for R that is easy learn and use, and integrates with your existing 'workflow'.
 
 %package lib
 Summary: lib components for the R-testthat package.
@@ -36,13 +52,13 @@ lib components for the R-testthat package.
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1557112251
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1562088214
 
 %install
-export SOURCE_DATE_EPOCH=1557112251
+export SOURCE_DATE_EPOCH=1562088214
 rm -rf %{buildroot}
-export LANG=C
+export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -71,7 +87,7 @@ R CMD INSTALL --preclean --install-tests --built-timestamp=${SOURCE_DATE_EPOCH} 
 cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 %{__rm} -rf %{buildroot}%{_datadir}/R/library/R.css
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
