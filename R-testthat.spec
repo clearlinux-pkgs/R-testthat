@@ -4,7 +4,7 @@
 #
 Name     : R-testthat
 Version  : 2.2.1
-Release  : 69
+Release  : 70
 URL      : https://cran.r-project.org/src/contrib/testthat_2.2.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/testthat_2.2.1.tar.gz
 Summary  : Unit Testing for R
@@ -14,24 +14,20 @@ Requires: R-testthat-lib = %{version}-%{release}
 Requires: R-R6
 Requires: R-cli
 Requires: R-crayon
-Requires: R-curl
 Requires: R-digest
 Requires: R-evaluate
 Requires: R-magrittr
 Requires: R-praise
 Requires: R-rlang
-Requires: R-vctrs
 Requires: R-withr
 BuildRequires : R-R6
 BuildRequires : R-cli
 BuildRequires : R-crayon
-BuildRequires : R-curl
 BuildRequires : R-digest
 BuildRequires : R-evaluate
 BuildRequires : R-magrittr
 BuildRequires : R-praise
 BuildRequires : R-rlang
-BuildRequires : R-vctrs
 BuildRequires : R-withr
 BuildRequires : buildreq-R
 
@@ -55,10 +51,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1564079457
+export SOURCE_DATE_EPOCH=1569737323
 
 %install
-export SOURCE_DATE_EPOCH=1564079457
+export SOURCE_DATE_EPOCH=1569737323
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
