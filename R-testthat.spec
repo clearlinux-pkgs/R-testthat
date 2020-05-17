@@ -4,7 +4,7 @@
 #
 Name     : R-testthat
 Version  : 2.3.2
-Release  : 75
+Release  : 76
 URL      : https://cran.r-project.org/src/contrib/testthat_2.3.2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/testthat_2.3.2.tar.gz
 Summary  : Unit Testing for R
@@ -21,7 +21,6 @@ Requires: R-magrittr
 Requires: R-pkgload
 Requires: R-praise
 Requires: R-rlang
-Requires: R-vctrs
 Requires: R-withr
 BuildRequires : R-R6
 BuildRequires : R-cli
@@ -33,13 +32,12 @@ BuildRequires : R-magrittr
 BuildRequires : R-pkgload
 BuildRequires : R-praise
 BuildRequires : R-rlang
-BuildRequires : R-vctrs
 BuildRequires : R-withr
 BuildRequires : buildreq-R
 
 %description
-# testthat <img src="man/figures/logo.png" align="right" />
-<!-- badges: start -->
+frustrating and boring, many of us avoid it. 'testthat' is a testing framework 
+    for R that is easy to learn and use, and integrates with your existing 'workflow'.
 
 %package lib
 Summary: lib components for the R-testthat package.
@@ -51,21 +49,22 @@ lib components for the R-testthat package.
 
 %prep
 %setup -q -c -n testthat
+cd %{_builddir}/testthat
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1583253185
+export SOURCE_DATE_EPOCH=1589744976
 
 %install
-export SOURCE_DATE_EPOCH=1583253185
+export SOURCE_DATE_EPOCH=1589744976
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -260,3 +259,4 @@ R CMD check --no-manual --no-examples --no-codoc testthat || :
 %defattr(-,root,root,-)
 /usr/lib64/R/library/testthat/libs/testthat.so
 /usr/lib64/R/library/testthat/libs/testthat.so.avx2
+/usr/lib64/R/library/testthat/libs/testthat.so.avx512

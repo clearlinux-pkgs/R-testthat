@@ -1,9 +1,9 @@
 # This file contains recursive sources that require this package
 R-DBItest
 R-devtools
+R-isoband
 R-jsonlite
 R-lintr
 R-mockery
 R-openssl
 R-toOrdinal
-apache-spark
