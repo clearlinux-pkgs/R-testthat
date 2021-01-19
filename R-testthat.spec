@@ -4,7 +4,7 @@
 #
 Name     : R-testthat
 Version  : 3.0.1
-Release  : 81
+Release  : 82
 URL      : https://cran.r-project.org/src/contrib/testthat_3.0.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/testthat_3.0.1.tar.gz
 Summary  : Unit Testing for R
@@ -28,6 +28,7 @@ Requires: R-praise
 Requires: R-processx
 Requires: R-ps
 Requires: R-rlang
+Requires: R-waldo
 Requires: R-withr
 BuildRequires : R-R6
 BuildRequires : R-brio
@@ -72,10 +73,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1610309313
+export SOURCE_DATE_EPOCH=1611042179
 
 %install
-export SOURCE_DATE_EPOCH=1610309313
+export SOURCE_DATE_EPOCH=1611042179
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
