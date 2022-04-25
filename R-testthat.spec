@@ -4,7 +4,7 @@
 #
 Name     : R-testthat
 Version  : 3.1.3
-Release  : 105
+Release  : 106
 URL      : https://cran.r-project.org/src/contrib/testthat_3.1.3.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/testthat_3.1.3.tar.gz
 Summary  : Unit Testing for R
