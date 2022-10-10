@@ -1,8 +1,8 @@
 # This file contains recursive sources that require this package
 R-DBItest
 R-devtools
-R-lintr
 R-mockery
+R-nloptr
 R-openssl
 R-toOrdinal
 R-vdiffr
