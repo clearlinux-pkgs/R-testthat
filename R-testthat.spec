@@ -4,7 +4,7 @@
 #
 Name     : R-testthat
 Version  : 3.1.7
-Release  : 116
+Release  : 117
 URL      : https://cran.r-project.org/src/contrib/testthat_3.1.7.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/testthat_3.1.7.tar.gz
 Summary  : Unit Testing for R
@@ -48,9 +48,6 @@ BuildRequires : R-rlang
 BuildRequires : R-waldo
 BuildRequires : R-withr
 BuildRequires : buildreq-R
-# Suppress stripping binaries
-%define __strip /bin/true
-%define debug_package %{nil}
 
 %description
 frustrating and boring, many of us avoid it. 'testthat' is a testing
@@ -74,10 +71,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1678726894
+export SOURCE_DATE_EPOCH=1678828739
 
 %install
-export SOURCE_DATE_EPOCH=1678726894
+export SOURCE_DATE_EPOCH=1678828739
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
