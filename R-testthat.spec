@@ -4,10 +4,10 @@
 # Using build pattern: R
 #
 Name     : R-testthat
-Version  : 3.1.8
-Release  : 120
-URL      : https://cran.r-project.org/src/contrib/testthat_3.1.8.tar.gz
-Source0  : https://cran.r-project.org/src/contrib/testthat_3.1.8.tar.gz
+Version  : 3.1.9
+Release  : 121
+URL      : https://cran.r-project.org/src/contrib/testthat_3.1.9.tar.gz
+Source0  : https://cran.r-project.org/src/contrib/testthat_3.1.9.tar.gz
 Summary  : Unit Testing for R
 Group    : Development/Tools
 License  : MIT
@@ -74,10 +74,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1683218368
+export SOURCE_DATE_EPOCH=1686931913
 
 %install
-export SOURCE_DATE_EPOCH=1683218368
+export SOURCE_DATE_EPOCH=1686931913
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -228,8 +228,10 @@ R CMD check --no-manual --no-examples --no-codoc . || :
 /usr/lib64/R/library/testthat/tests/testthat/_snaps/snapshot-manage.md
 /usr/lib64/R/library/testthat/tests/testthat/_snaps/snapshot.md
 /usr/lib64/R/library/testthat/tests/testthat/_snaps/source.md
+/usr/lib64/R/library/testthat/tests/testthat/_snaps/test-env.md
 /usr/lib64/R/library/testthat/tests/testthat/_snaps/test-files.md
 /usr/lib64/R/library/testthat/tests/testthat/_snaps/test-path.md
+/usr/lib64/R/library/testthat/tests/testthat/_snaps/test-state.md
 /usr/lib64/R/library/testthat/tests/testthat/context.R
 /usr/lib64/R/library/testthat/tests/testthat/helper-assign.R
 /usr/lib64/R/library/testthat/tests/testthat/helper-testthat.R
@@ -241,6 +243,7 @@ R CMD check --no-manual --no-examples --no-codoc . || :
 /usr/lib64/R/library/testthat/tests/testthat/reporters/fail.R
 /usr/lib64/R/library/testthat/tests/testthat/reporters/long-test.R
 /usr/lib64/R/library/testthat/tests/testthat/reporters/skips.R
+/usr/lib64/R/library/testthat/tests/testthat/reporters/state-change.R
 /usr/lib64/R/library/testthat/tests/testthat/reporters/successes.R
 /usr/lib64/R/library/testthat/tests/testthat/reporters/tests.R
 /usr/lib64/R/library/testthat/tests/testthat/setup.R
@@ -320,6 +323,14 @@ R CMD check --no-manual --no-examples --no-codoc . || :
 /usr/lib64/R/library/testthat/tests/testthat/test-parallel/setup/tests/testthat/test-setup-1.R
 /usr/lib64/R/library/testthat/tests/testthat/test-parallel/setup/tests/testthat/test-setup-2.R
 /usr/lib64/R/library/testthat/tests/testthat/test-parallel/setup/tests/testthat/test-setup-3.R
+/usr/lib64/R/library/testthat/tests/testthat/test-parallel/snap/DESCRIPTION
+/usr/lib64/R/library/testthat/tests/testthat/test-parallel/snap/NAMESPACE
+/usr/lib64/R/library/testthat/tests/testthat/test-parallel/snap/tests/testthat/_snaps/snap-1.md
+/usr/lib64/R/library/testthat/tests/testthat/test-parallel/snap/tests/testthat/_snaps/snap-2.md
+/usr/lib64/R/library/testthat/tests/testthat/test-parallel/snap/tests/testthat/_snaps/snap-3.md
+/usr/lib64/R/library/testthat/tests/testthat/test-parallel/snap/tests/testthat/test-snap-1.R
+/usr/lib64/R/library/testthat/tests/testthat/test-parallel/snap/tests/testthat/test-snap-2.R
+/usr/lib64/R/library/testthat/tests/testthat/test-parallel/snap/tests/testthat/test-snap-3.R
 /usr/lib64/R/library/testthat/tests/testthat/test-parallel/startup/DESCRIPTION
 /usr/lib64/R/library/testthat/tests/testthat/test-parallel/startup/NAMESPACE
 /usr/lib64/R/library/testthat/tests/testthat/test-parallel/startup/R/fail.R
@@ -367,6 +378,7 @@ R CMD check --no-manual --no-examples --no-codoc . || :
 /usr/lib64/R/library/testthat/tests/testthat/test-test-example.R
 /usr/lib64/R/library/testthat/tests/testthat/test-test-files.R
 /usr/lib64/R/library/testthat/tests/testthat/test-test-path.R
+/usr/lib64/R/library/testthat/tests/testthat/test-test-state.R
 /usr/lib64/R/library/testthat/tests/testthat/test-test-that.R
 /usr/lib64/R/library/testthat/tests/testthat/test-try-again.R
 /usr/lib64/R/library/testthat/tests/testthat/test-verify-conditions-cr.txt
