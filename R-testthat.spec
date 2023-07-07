@@ -4,10 +4,10 @@
 # Using build pattern: R
 #
 Name     : R-testthat
-Version  : 3.1.9
-Release  : 122
-URL      : https://cran.r-project.org/src/contrib/testthat_3.1.9.tar.gz
-Source0  : https://cran.r-project.org/src/contrib/testthat_3.1.9.tar.gz
+Version  : 3.1.10
+Release  : 123
+URL      : https://cran.r-project.org/src/contrib/testthat_3.1.10.tar.gz
+Source0  : https://cran.r-project.org/src/contrib/testthat_3.1.10.tar.gz
 Summary  : Unit Testing for R
 Group    : Development/Tools
 License  : MIT
@@ -74,10 +74,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1686931913
+export SOURCE_DATE_EPOCH=1688746375
 
 %install
-export SOURCE_DATE_EPOCH=1686931913
+export SOURCE_DATE_EPOCH=1688746375
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -249,6 +249,7 @@ R CMD check --no-manual --no-examples --no-codoc . || :
 /usr/lib64/R/library/testthat/tests/testthat/setup.R
 /usr/lib64/R/library/testthat/tests/testthat/teardown.R
 /usr/lib64/R/library/testthat/tests/testthat/test-bare.R
+/usr/lib64/R/library/testthat/tests/testthat/test-browser.R
 /usr/lib64/R/library/testthat/tests/testthat/test-capture-output.R
 /usr/lib64/R/library/testthat/tests/testthat/test-catch.R
 /usr/lib64/R/library/testthat/tests/testthat/test-colour.R
@@ -304,6 +305,10 @@ R CMD check --no-manual --no-examples --no-codoc . || :
 /usr/lib64/R/library/testthat/tests/testthat/test-parallel/crash/tests/testthat/test-crash-1.R
 /usr/lib64/R/library/testthat/tests/testthat/test-parallel/crash/tests/testthat/test-crash-2.R
 /usr/lib64/R/library/testthat/tests/testthat/test-parallel/crash/tests/testthat/test-crash-3.R
+/usr/lib64/R/library/testthat/tests/testthat/test-parallel/fail/DESCRIPTION
+/usr/lib64/R/library/testthat/tests/testthat/test-parallel/fail/NAMESPACE
+/usr/lib64/R/library/testthat/tests/testthat/test-parallel/fail/tests/testthat.R
+/usr/lib64/R/library/testthat/tests/testthat/test-parallel/fail/tests/testthat/test-bad.R
 /usr/lib64/R/library/testthat/tests/testthat/test-parallel/ok/DESCRIPTION
 /usr/lib64/R/library/testthat/tests/testthat/test-parallel/ok/NAMESPACE
 /usr/lib64/R/library/testthat/tests/testthat/test-parallel/ok/tests/testthat.R
