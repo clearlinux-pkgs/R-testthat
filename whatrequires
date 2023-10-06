@@ -4,5 +4,6 @@ R-devtools
 R-mockery
 R-nloptr
 R-openssl
+R-patrick
 R-toOrdinal
 R-vdiffr

@@ -4,10 +4,10 @@
 # Using build pattern: R
 #
 Name     : R-testthat
-Version  : 3.1.10
-Release  : 123
-URL      : https://cran.r-project.org/src/contrib/testthat_3.1.10.tar.gz
-Source0  : https://cran.r-project.org/src/contrib/testthat_3.1.10.tar.gz
+Version  : 3.2.0
+Release  : 124
+URL      : https://cran.r-project.org/src/contrib/testthat_3.2.0.tar.gz
+Source0  : https://cran.r-project.org/src/contrib/testthat_3.2.0.tar.gz
 Summary  : Unit Testing for R
 Group    : Development/Tools
 License  : MIT
@@ -74,19 +74,19 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1688746375
+export SOURCE_DATE_EPOCH=1696630041
 
 %install
-export SOURCE_DATE_EPOCH=1688746375
+export SOURCE_DATE_EPOCH=1696630041
 rm -rf %{buildroot}
-export LANG=C.UTF-8
-export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
-export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
-export AR=gcc-ar
-export RANLIB=gcc-ranlib
-export LDFLAGS="$LDFLAGS  -Wl,-z -Wl,relro"
+LANG=C.UTF-8
+CFLAGS="$CLEAR_INTERMEDIATE_CFLAGS -O3 -flto -fno-semantic-interposition "
+FCFLAGS="$CLEAR_INTERMEDIATE_FFLAGS -O3 -flto -fno-semantic-interposition "
+FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS -O3 -flto -fno-semantic-interposition "
+CXXFLAGS="$CLEAR_INTERMEDIATE_CXXFLAGS -O3 -flto -fno-semantic-interposition "
+AR=gcc-ar
+RANLIB=gcc-ranlib
+LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS  -Wl,-z -Wl,relro"
 mkdir -p %{buildroot}/usr/lib64/R/library
 
 mkdir -p ~/.R
@@ -191,6 +191,7 @@ R CMD check --no-manual --no-examples --no-codoc . || :
 /usr/lib64/R/library/testthat/tests/testthat/_snaps/R4.1/snapshot.md
 /usr/lib64/R/library/testthat/tests/testthat/_snaps/R4.2/snapshot-file/version.txt
 /usr/lib64/R/library/testthat/tests/testthat/_snaps/R4.2/snapshot.md
+/usr/lib64/R/library/testthat/tests/testthat/_snaps/deprec-condition.md
 /usr/lib64/R/library/testthat/tests/testthat/_snaps/describe.md
 /usr/lib64/R/library/testthat/tests/testthat/_snaps/edition.md
 /usr/lib64/R/library/testthat/tests/testthat/_snaps/expect-condition.md
@@ -215,8 +216,6 @@ R CMD check --no-manual --no-examples --no-codoc . || :
 /usr/lib64/R/library/testthat/tests/testthat/_snaps/reporter-tap.md
 /usr/lib64/R/library/testthat/tests/testthat/_snaps/reporter-teamcity.md
 /usr/lib64/R/library/testthat/tests/testthat/_snaps/reporter.md
-/usr/lib64/R/library/testthat/tests/testthat/_snaps/rlang-1.0/snapshot.md
-/usr/lib64/R/library/testthat/tests/testthat/_snaps/rlang-pre-1.0/snapshot.md
 /usr/lib64/R/library/testthat/tests/testthat/_snaps/skip.md
 /usr/lib64/R/library/testthat/tests/testthat/_snaps/snapshot-cleanup.md
 /usr/lib64/R/library/testthat/tests/testthat/_snaps/snapshot-file.md
@@ -226,6 +225,7 @@ R CMD check --no-manual --no-examples --no-codoc . || :
 /usr/lib64/R/library/testthat/tests/testthat/_snaps/snapshot-file/foo.r
 /usr/lib64/R/library/testthat/tests/testthat/_snaps/snapshot-file/secret.txt
 /usr/lib64/R/library/testthat/tests/testthat/_snaps/snapshot-manage.md
+/usr/lib64/R/library/testthat/tests/testthat/_snaps/snapshot-value.md
 /usr/lib64/R/library/testthat/tests/testthat/_snaps/snapshot.md
 /usr/lib64/R/library/testthat/tests/testthat/_snaps/source.md
 /usr/lib64/R/library/testthat/tests/testthat/_snaps/test-env.md
@@ -234,7 +234,6 @@ R CMD check --no-manual --no-examples --no-codoc . || :
 /usr/lib64/R/library/testthat/tests/testthat/_snaps/test-state.md
 /usr/lib64/R/library/testthat/tests/testthat/context.R
 /usr/lib64/R/library/testthat/tests/testthat/helper-assign.R
-/usr/lib64/R/library/testthat/tests/testthat/helper-testthat.R
 /usr/lib64/R/library/testthat/tests/testthat/one.rds
 /usr/lib64/R/library/testthat/tests/testthat/reporters/backtraces.R
 /usr/lib64/R/library/testthat/tests/testthat/reporters/context.R
@@ -371,12 +370,14 @@ R CMD check --no-manual --no-examples --no-codoc . || :
 /usr/lib64/R/library/testthat/tests/testthat/test-snapshot-manage.R
 /usr/lib64/R/library/testthat/tests/testthat/test-snapshot-reporter.R
 /usr/lib64/R/library/testthat/tests/testthat/test-snapshot-serialize.R
+/usr/lib64/R/library/testthat/tests/testthat/test-snapshot-value.R
 /usr/lib64/R/library/testthat/tests/testthat/test-snapshot.R
 /usr/lib64/R/library/testthat/tests/testthat/test-snapshot/_snaps/snapshot.md
 /usr/lib64/R/library/testthat/tests/testthat/test-snapshot/test-expect-condition.R
 /usr/lib64/R/library/testthat/tests/testthat/test-snapshot/test-snapshot.R
 /usr/lib64/R/library/testthat/tests/testthat/test-source.R
 /usr/lib64/R/library/testthat/tests/testthat/test-source_dir.R
+/usr/lib64/R/library/testthat/tests/testthat/test-srcrefs.R
 /usr/lib64/R/library/testthat/tests/testthat/test-teardown.R
 /usr/lib64/R/library/testthat/tests/testthat/test-teardown/test-teardown.R
 /usr/lib64/R/library/testthat/tests/testthat/test-test-env.R
