@@ -7,7 +7,7 @@
 #
 Name     : R-testthat
 Version  : 3.2.1.1
-Release  : 127
+Release  : 128
 URL      : https://cran.r-project.org/src/contrib/testthat_3.2.1.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/testthat_3.2.1.1.tar.gz
 Summary  : Unit Testing for R
@@ -77,10 +77,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1713137431
+export SOURCE_DATE_EPOCH=1714066796
 
 %install
-export SOURCE_DATE_EPOCH=1713137431
+export SOURCE_DATE_EPOCH=1714066796
 rm -rf %{buildroot}
 LANG=C.UTF-8
 CFLAGS="$CLEAR_INTERMEDIATE_CFLAGS -O3 -flto -fno-semantic-interposition "
